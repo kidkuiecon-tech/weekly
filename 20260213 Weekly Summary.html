@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Market Deep Dive: Feb 2026</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Noto Sans Thai -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    :root {
+      --bg-main: #FDFBF7;            
+      --bg-panel: #FFFFFF;
+      --text-primary: #2D3748;       
+      --text-secondary: #718096;     
+      --accent-primary: #0064FF;     
+      --accent-red: #EF3C67;         
+      --accent-green: #61D09C;       
+      --accent-maroon: #7A0334;      
+      --accent-purple: #9E50CC;      
+      --border-soft: #E2E8F0;
+    }
+
+    body {
+      font-family: 'Noto Sans Thai', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .nav-item.active {
+      background-color: #EDF2F7;
+      color: var(--accent-primary);
+      border-left: 4px solid var(--accent-primary);
+      font-weight: 600;
+    }
+
+    .content-card {
+      background-color: var(--bg-panel);
+      border-radius: 1.25rem;
+      border: 1px solid var(--border-soft);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .highlight-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .callout-box {
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid transparent;
+    }
+
+    .fade-in { animation: fadeIn 0.5s ease-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Custom Bullet Points */
+    .detailed-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    .detailed-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-primary);
+      font-weight: bold;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: #CBD5E0; border-radius: 10px; }
+  </style>
+
+  <!-- Application Structure Plan:
+       - User Task: Detailed reading and synthesis of a complex global financial report.
+       - Layout Design: 
+         1. "The Pulse" (Global Summary): Overview of the AI Reality Check.
+         2. "Western Dynamics": Deep dive into US & Europe's internal conflicts.
+         3. "Asian Giants": Contrast between Japan's political rally and China's deflationary strategy.
+         4. "ASEAN In-Depth": Country-by-country breakdown with specific callout for Thailand.
+         5. "EM & Commodities": Synthesis of other emerging markets.
+       - Typography Logic:
+         - H1 (3xl): Main View Title
+         - H2 (2xl): Core Section Header
+         - H3 (lg): Country/Topic Heading
+         - H4 (sm/bold): Labels/Status Indicator
+  -->
+</head>
+
+<body class="h-screen flex flex-col md:flex-row overflow-hidden">
+
+  <!-- Mobile Header -->
+  <header class="md:hidden bg-white shadow-sm p-4 flex justify-between items-center z-20 border-b">
+    <h1 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+      <i class="ph ph-globe-stand text-[#0064FF]"></i> Global Intel '26
+    </h1>
+    <button id="mobile-menu-btn" class="text-gray-600">
+      <i class="ph ph-list text-2xl"></i>
+    </button>
+  </header>
+
+  <!-- Sidebar -->
+  <nav id="sidebar" class="bg-white border-r border-gray-200 w-full md:w-72 flex-shrink-0 absolute md:relative inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-30 flex flex-col h-full">
+    <div class="p-8 border-b border-gray-100 hidden md:block">
+      <h1 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+        <i class="ph ph-globe-stand text-[#0064FF]"></i> Weekly Summary
+      </h1>
+      <p class="text-xs text-gray-400 mt-1 font-bold uppercase tracking-widest">Global Economics and Market Report</p>
+    </div>
+
+    <div class="flex-1 overflow-y-auto py-6">
+      <ul class="space-y-1">
+        <li>
+          <button onclick="navigateTo('global')" class="nav-item active w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="global">
+            <i class="ph ph-lightning text-lg"></i> <span>Weekly Executive Summary</span>
+          </button>
+        </li>
+        <li class="px-8 py-4 text-xs font-bold text-gray-400 uppercase tracking-widest">Regional Analysis</li>
+        <li>
+          <button onclick="navigateTo('west')" class="nav-item w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="west">
+            <i class="ph ph-buildings text-lg"></i> <span>Western Markets (US/EU)</span>
+          </button>
+        </li>
+        <li>
+          <button onclick="navigateTo('asia-giants')" class="nav-item w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="asia-giants">
+            <i class="ph ph-sun text-lg"></i> <span>Asia Giants (JP/CN)</span>
+          </button>
+        </li>
+        <li>
+          <button onclick="navigateTo('asean')" class="nav-item w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="asean">
+            <i class="ph ph-chart-polar text-lg"></i> <span>ASEAN Deep Dive</span>
+          </button>
+        </li>
+        <li>
+          <button onclick="navigateTo('em')" class="nav-item w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="em">
+            <i class="ph ph-rocket-launch text-lg"></i> <span>Other EM & Commodities</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="p-6 border-t border-gray-100 bg-gray-50">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600">
+          <i class="ph ph-briefcase"></i>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500">Updated: Feb 13, 2026</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-1 overflow-y-auto relative p-6 md:p-12" id="main-content">
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-30 z-20 hidden md:hidden"></div>
+    
+    <div class="max-w-4xl mx-auto">
+
+      <!-- VIEW: WEEKLY SUMMARY -->
+      <section id="view-global" class="view-section fade-in">
+        <div class="mb-12">
+          <span class="highlight-label text-blue-600">Market Pulse</span>
+          <h1 class="text-3xl font-bold text-gray-800 leading-tight">สัปดาห์ที่ 2 กุมภาพันธ์ 2026: ยุคสมัยแห่ง "AI Reality Check"</h1>
+          <p class="mt-4 text-lg text-gray-500 font-light">เมื่อตลาดเริ่มหันมาโฟกัสที่ผลตอบแทนจริง (ROIC) แทนกระแสความตื่นเต้นเพียงอย่างเดียว</p>
+        </div>
+
+        <!-- Weekly Summary Card -->
+        <div class="content-card">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">ภาพรวมเหตุการณ์สำคัญ</h2>
+          <ul class="detailed-list text-sm text-gray-700">
+            <li><strong>Rotation & Correction:</strong> ตลาดหุ้นสหรัฐฯ เริ่มต้นสัปดาห์ด้วยความคึกคักจน Dow Jones ทะลุ 50,000 จุด ก่อนจะเผชิญการปรับฐานครั้งใหญ่เมื่อนักลงทุนเปลี่ยนกลุ่มลงทุน (Rotation) เข้าสู่หุ้นกลุ่มวัฏจักร</li>
+            <li><strong>AI Capex Fever:</strong> ความกังวลเริ่มก่อตัวจากแผนการลงทุนมหาศาลของยักษ์ใหญ่เทคโนโลยี อาทิ <strong>Amazon ($200bn)</strong> และ <strong>Alphabet ($20bn)</strong> ซึ่งสร้างแรงกดดันต่อกระแสเงินสดและทำให้นักลงทุนเริ่มประเมินความคุ้มค่าของการลงทุน</li>
+            <li><strong>Disruption Fears:</strong> ความกังวลลามไปยังธุรกิจดั้งเดิม เช่น กลุ่มบริหารความมั่งคั่งและซอฟต์แวร์ ที่ราคาหุ้นดิ่งลงหนักเนื่องจากความเสี่ยงถูก AI เข้ามาทดแทน (Middle-week sell-off)</li>
+            <li><strong>Policy & Yield Pressure:</strong> ตัวเลขจ้างงานสหรัฐฯ (NFP) ม.ค. พุ่งสูงกว่าคาด 2 เท่า (+1.3 แสนตำแหน่ง) กดดันให้ตลาดต้องปรับมุมมองการลดดอกเบี้ย Fed ไปไกลถึงเดือน <strong>ก.ค. 2026</strong> ดัน Bond Yield 10 ปี ขยับสูงขึ้นทันที</li>
+            <li><strong>Strategic Move by China:</strong> จีนแสดงท่าทีชัดเจนในการลดความพึ่งพาเงินดอลลาร์ โดยสั่งให้แบงก์ลดถือพันธบัตร US พร้อมเข้าซื้อทองคำสำรองติดต่อกันเป็นเดือนที่ 15</li>
+          </ul>
+
+          <div class="callout-box bg-gray-50 border-gray-200 grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-8">
+            <div>
+              <span class="highlight-label text-gray-400">Dow Peak</span>
+              <p class="text-2xl font-bold text-gray-800">50,000</p>
+            </div>
+            <div>
+              <span class="highlight-label text-gray-400">Fed First Cut</span>
+              <p class="text-2xl font-bold text-blue-600">JUL '26</p>
+            </div>
+            <div>
+              <span class="highlight-label text-gray-400">US 10Y Yield</span>
+              <p class="text-2xl font-bold text-red-600">4.20%</p>
+            </div>
+            <div>
+              <span class="highlight-label text-gray-400">Asia Outperform</span>
+              <p class="text-2xl font-bold text-green-600">+13%</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW: WESTERN MARKETS -->
+      <section id="view-west" class="view-section hidden fade-in">
+        <div class="mb-12">
+          <span class="highlight-label text-blue-600">Developed Markets</span>
+          <h1 class="text-3xl font-bold text-gray-800 leading-tight">พลวัตฝั่งตะวันตก (US & Europe)</h1>
+        </div>
+
+        <div class="content-card mb-8">
+          <h3 class="text-lg font-bold text-gray-800 mb-4 uppercase tracking-tighter flex items-center gap-2">
+            <i class="ph ph-flag-banner text-blue-600"></i> United States: ความผันผวนและปัจจัยกดดัน
+          </h3>
+          <ul class="detailed-list text-sm text-gray-700">
+            <li><strong>Tech Correction:</strong> หุ้นกลุ่ม AI เผชิญแรงเทขายหนักจากความกังวลรายจ่าย Capex ที่สูงลิ่ว (Amazon $200bn / Alphabet $32bn) ส่งผลให้ Nasdaq 100 และ S&P 500 ปรับฐานลดลงในช่วงปลายสัปดาห์</li>
+            <li><strong>Economic Surprise:</strong> ยอดค้าปลีก ธ.ค. ทรงตัวที่ 0.0% แต่ตัวเลขจ้างงานนอกภาคเกษตร (NFP) ร้อนแรงเกินคาด ดับความหวังการลดดอกเบี้ยในครึ่งปีแรก</li>
+            <li><strong>Political Risk:</strong> ตลาดเริ่มกังวลปัจจัยการเมืองเรื่องการถอนตัวจากข้อตกลง <strong>USMCA</strong> และการตรวจสอบการผูกขาดในกลุ่มบริษัทสร้างบ้าน</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3 class="text-lg font-bold text-gray-800 mb-4 uppercase tracking-tighter flex items-center gap-2">
+            <i class="ph ph-globe-hemisphere-west text-blue-900"></i> Europe: การฟื้นตัวของอุตสาหกรรมดั้งเดิม
+          </h3>
+          <ul class="detailed-list text-sm text-gray-700">
+            <li><strong>Luxury Support:</strong> กลุ่มสินค้าหรูหรา (Hermes / Kering) ช่วยพยุงตลาดด้วยยอดขายที่เติบโตแข็งแกร่ง ขณะที่ Siemens ทำ New High จากอานิสงส์ AI</li>
+            <li><strong>Software Disruption:</strong> หุ้นเทคโนโลยีฝั่งยุโรป (Dassault Systemes) ดิ่งลงกว่า 20% จากความกังวลว่า AI จะทำลายโมเดลธุรกิจเดิม</li>
+            <li><strong>Monetary Divergence:</strong> ECB กังวลภาวะเงินเฟ้อต่ำเกินเป้าจากการนำเข้าสินค้าราคาถูกจากจีน ขณะที่เศรษฐกิจสหราชอาณาจักร (GDP Q4) ขยายตัวเพียง 0.1% ต่ำกว่าเป้า</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- VIEW: ASIA GIANTS -->
+      <section id="view-asia-giants" class="view-section hidden fade-in">
+        <div class="mb-12">
+          <span class="highlight-label text-red-600">The Power of East</span>
+          <h1 class="text-3xl font-bold text-gray-800 leading-tight">ยักษ์ใหญ่แห่งเอเชีย (Japan & China)</h1>
+        </div>
+
+        <!-- Japan Box -->
+        <div class="content-card border-t-4 border-[#EF3C67]">
+          <div class="flex justify-between items-start mb-6">
+            <h3 class="text-xl font-bold text-gray-800">Japan: ตลาดกระทิงจากการเมือง</h3>
+            <span class="bg-[#EF3C67]/10 text-[#EF3C67] text-xs font-bold px-3 py-1 rounded-full uppercase">All-Time High</span>
+          </div>
+          <ul class="detailed-list text-sm text-gray-700">
+            <li><strong>Takaichi Rally:</strong> ชัยชนะของ Sanae Takaichi ปูทางสู่มาตรการกระตุ้นเศรษฐกิจขนานใหญ่ ดัน Nikkei 225 พุ่งทะยาน 5.7% ในสัปดาห์เดียว</li>
+            <li><strong>Financial Sector:</strong> หุ้นกลุ่มธนาคารแตะระดับสูงสุดในรอบเกือบ 30 ปี จากความหวังการขึ้นดอกเบี้ยของ BoJ ในเดือน เม.ย. (ตลาดให้ความน่าจะเป็น 78%)</li>
+            <li><strong>Fiscal Discipline:</strong> กระทรวงการคลังยืนยันจะยุติมาตรการลดภาษีภายใน 2 ปี เพื่อลดความกังวลเรื่องการขาดดุลระยะยาว</li>
+          </ul>
+        </div>
+
+        <!-- China Box -->
+        <div class="content-card border-t-4 border-[#F6AD55]">
+          <div class="flex justify-between items-start mb-6">
+            <h3 class="text-xl font-bold text-gray-800">China: ยุทธศาสตร์ลดความเสี่ยงดอลลาร์</h3>
+            <span class="bg-[#F6AD55]/10 text-[#F6AD55] text-xs font-bold px-3 py-1 rounded-full uppercase">Strategic Shift</span>
+          </div>
+          <ul class="detailed-list text-sm text-gray-700">
+            <li><strong>Deflationary Trap:</strong> CPI ม.ค. โตเพียง 0.2% ขณะที่ PPI หดตัวต่อเนื่องเป็นเดือนที่ 40 สะท้อนภาวะเงินฝืดที่ยังกดดันเศรษฐกิจ</li>
+            <li><strong>De-dollarization:</strong> รัฐบาลส่งสัญญาณให้แบงก์ลดการถือครองพันธบัตรสหรัฐฯ พร้อมสะสมทองคำติดต่อกันเดือนที่ 15 เพื่อเพิ่มอำนาจต่อรองเชิงยุทธศาสตร์</li>
+            <li><strong>Market Sentiment:</strong> นักลงทุนสถาบันโลก (GS / JPM) เริ่มมองบวกต่อหุ้นกลุ่ม Tech และชิปของจีนมากขึ้นเพื่อรับโอกาสการฟื้นตัว</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- VIEW: ASEAN DEEP DIVE -->
+      <section id="view-asean" class="view-section hidden fade-in">
+        <div class="mb-10">
+          <span class="highlight-label text-green-600">ASEAN Dynamics</span>
+          <h1 class="text-3xl font-bold text-gray-800 leading-tight">เจาะลึกเศรษฐกิจอาเซียน</h1>
+        </div>
+
+        <!-- Thailand Spotlight -->
+        <div class="content-card bg-[#0064FF]/5 border-[#0064FF]/20 border-l-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <i class="ph ph-flag text-blue-600"></i> Thailand Spotlight
+          </h3>
+          <p class="text-sm text-gray-700 mb-6 leading-relaxed">
+            ความชัดเจนทางการเมืองจากการที่พรรคภูมิใจไทยเป็นแกนนำจัดตั้งรัฐบาลผสม ช่วยสร้างความเชื่อมั่นเรื่อง <strong>Policy Continuity</strong> ส่งผลให้ต่างชาติซื้อสุทธิสูงสุดในรอบ 4 ปี และเงินบาทแข็งค่าที่ 31.65 THB/USD
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 bg-white rounded-xl shadow-sm">
+              <h4 class="text-xs font-bold text-gray-400 uppercase">Growth Challenge</h4>
+              <p class="text-sm text-gray-800 mt-1">World Bank หั่น GDP ปี '26 เหลือ 1.6% จากปัจจัยลบการค้าโลกและหนี้ครัวเรือน</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-sm">
+              <h4 class="text-xs font-bold text-gray-400 uppercase">Key Policies</h4>
+              <p class="text-sm text-gray-800 mt-1">เตรียมขับเคลื่อน "10 Plus" และ "คนละครึ่งเฟส 2" เพื่อกระตุ้นบริโภคภายใน</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regional Pulse Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="content-card p-6 mb-0">
+            <h4 class="text-sm font-bold text-red-600 uppercase mb-2">Vietnam</h4>
+            <p class="text-sm text-gray-600 mb-2">FDI ม.ค. พุ่งแตะ $1.68bn สูงสุดในรอบ 5 ปี เตรียมสร้าง Vietnam Int'l Financial Center ($10bn)</p>
+          </div>
+          <div class="content-card p-6 mb-0">
+            <h4 class="text-sm font-bold text-blue-800 uppercase mb-2">Singapore</h4>
+            <p class="text-sm text-gray-600 mb-2">MTI ปรับเป้า GDP ขึ้นเป็น 2–4% หลังดึงเม็ดเงินลงทุนสินทรัพย์ถาวรได้สูงถึง $14.2bn</p>
+          </div>
+          <div class="content-card p-6 mb-0">
+            <h4 class="text-sm font-bold text-green-700 uppercase mb-2">Indonesia</h4>
+            <p class="text-sm text-gray-600 mb-2">สั่งลดโควตาผลิตนิกเกิลเพื่อพยุงราคาทั่วโลก และยืนยันวินัยคลังขาดดุลไม่เกิน 3% ของ GDP</p>
+          </div>
+          <div class="content-card p-6 mb-0">
+            <h4 class="text-sm font-bold text-orange-600 uppercase mb-2">Malaysia</h4>
+            <p class="text-sm text-gray-600 mb-2">ค้าปลีก ธ.ค. โตแกร่ง +7.6% เร่งใช้สกุลเงินท้องถิ่น (MYR-INR) ทำการค้ากับอินเดีย</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW: EM & COMMODITIES -->
+      <section id="view-em" class="view-section hidden fade-in">
+        <div class="mb-12">
+          <span class="highlight-label text-purple-600">Global Connectivity</span>
+          <h1 class="text-3xl font-bold text-gray-800 leading-tight">ตลาดเกิดใหม่และสินค้าโภคภัณฑ์</h1>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Korea -->
+          <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex gap-6 items-start">
+            <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
+              <i class="ph ph-cpu text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-800">South Korea & Taiwan: สงครามราคาชิป</h3>
+              <p class="text-sm text-gray-600 mt-1">Kospi และ TSMC นำตลาดด้วย AI Chips (Korea YTD +26-31%) แต่เริ่มกังวลสงครามราคา HBM และภาวะสินค้าล้นตลาดในระยะกลาง</p>
+            </div>
+          </div>
+
+          <!-- India -->
+          <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex gap-6 items-start">
+            <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 flex-shrink-0">
+              <i class="ph ph-bank text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-800">India: สภาพคล่องและปัจจัยความเสี่ยง</h3>
+              <p class="text-sm text-gray-600 mt-1">RBI คงดอกเบี้ย 5.25% ท่ามกลางสภาพคล่องส่วนเกิน $3.5bn ขณะที่ทางการสหรัฐฯ ตรวจสอบ Adani เรื่องการนำเข้าน้ำมันอิหร่าน</p>
+            </div>
+          </div>
+
+          <!-- LatAm -->
+          <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex gap-6 items-start">
+            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600 flex-shrink-0">
+              <i class="ph ph-globe-hemisphere-west text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-800">Latin America: แหล่งพักเงินสำรอง</h3>
+              <p class="text-sm text-gray-600 mt-1">บราซิลดึงดูด Fund Flow จากเม็กซิโกเนื่องจากความกังวล USMCA ส่วนอาร์เจนตินาเร่งผ่านกฎหมายแรงงานใหม่เพื่อดึงดูด FDI</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Strategy Box -->
+        <div class="mt-12 p-8 bg-gray-800 rounded-3xl text-white">
+          <h4 class="text-sm font-bold text-blue-400 uppercase mb-2">Investment Conclusion</h4>
+          <p class="text-lg font-bold mb-4">สัปดาห์นี้ชี้ให้เห็นว่า "ความคุ้มค่า" และ "เสถียรภาพทางการเมือง" จะเป็นตัวขับเคลื่อนตลาดในระยะถัดไป</p>
+          <p class="text-sm text-gray-400">ควรระมัดระวังหุ้นเทคโนโลยีที่มี Valuation สูงเกินไป และหันมาโฟกัสตลาดเอเชียที่มีความชัดเจนด้านนโยบาย โดยเฉพาะ ญี่ปุ่น และ ไทย ที่มีสัญญาณบวกเชิงโครงสร้าง</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.view-section');
+
+    function navigateTo(targetId) {
+      navItems.forEach(item => {
+        if (item.dataset.target === targetId) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      sections.forEach(section => {
+        if (section.id === `view-${targetId}`) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+
+      // Scroll to top of main content
+      document.getElementById('main-content').scrollTop = 0;
+
+      if (window.innerWidth < 768) {
+        document.getElementById('sidebar').classList.add('-translate-x-full');
+        document.getElementById('sidebar-overlay').classList.add('hidden');
+      }
+    }
+
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('-translate-x-full');
+      document.getElementById('sidebar-overlay').classList.toggle('hidden');
+    });
+
+    document.getElementById('sidebar-overlay').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.add('-translate-x-full');
+      document.getElementById('sidebar-overlay').classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
