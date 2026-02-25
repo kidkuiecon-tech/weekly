@@ -1,373 +1,815 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Global Market Deep Dive: Feb 2026 (Week 4)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Market Summary | 10–25 กุมภาพันธ์ 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── BASE ── */
+        body {
+            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #F4F7FC;
+            padding: 20px;
+            font-size: 15px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+        /* ── HEADER BAR ── */
+        .color-bar {
+            display: flex;
+            height: 5px;
+            margin: -30px -30px 24px -30px;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+        }
+        .color-bar span { flex: 1; }
+        .color-bar span:nth-child(1) { background: #1C3765; }
+        .color-bar span:nth-child(2) { background: #CD2036; }
+        .color-bar span:nth-child(3) { background: #377DFF; }
+        .color-bar span:nth-child(4) { background: #2DCA8C; }
+        .color-bar span:nth-child(5) { background: #FFBE3D; }
+        .color-bar span:nth-child(6) { background: #FF715B; }
 
-  <!-- Google Fonts: Noto Sans Thai -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        /* ── H1 ── */
+        h1 {
+            border-bottom: 2px solid #1C3765;
+            color: #1C3765;
+            padding-bottom: 10px;
+            text-align: center;
+            font-size: 1.6em;
+            font-weight: 800;
+        }
 
-  <!-- Phosphor Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        /* ── H2 (Region heading) ── */
+        h2 {
+            background: #1C3765;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 1.05em;
+            font-weight: 700;
+            margin-top: 32px;
+            font-family: 'Space Mono', monospace;
+            letter-spacing: 1px;
+        }
+        h2.global    { background: #1C3765; }
+        h2.us        { background: #CD2036; }
+        h2.eu        { background: #1a4b8f; border-left: 5px solid #FFBE3D; }
+        h2.japan     { background: #FF715B; }
+        h2.china     { background: #2DCA8C; }
+        h2.asean     { background: #1aaa72; }
+        h2.other-asia{ background: #377DFF; }
+        h2.corporate { background: #1C3765; border-left: 5px solid #FFBE3D; }
+        h2.indicators{ background: #1C3765; border-left: 5px solid #2DCA8C; }
+        h2.political { background: #1C3765; border-left: 5px solid #CD2036; }
 
-  <style>
-    :root {
-      --bg-main: #FDFBF7;            
-      --bg-panel: #FFFFFF;
-      --text-primary: #2D3748;       
-      --text-secondary: #718096;     
-      --accent-primary: #0064FF;     
-      --accent-red: #EF3C67;         
-      --accent-green: #61D09C;       
-      --accent-maroon: #7A0334;      
-      --accent-purple: #9E50CC;      
-      --border-soft: #E2E8F0;
-    }
+        /* ── H3 ── */
+        h3 {
+            color: #1C3765;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            font-size: 1em;
+            font-weight: 700;
+        }
 
-    body {
-      font-family: 'Noto Sans Thai', sans-serif;
-      background-color: var(--bg-main);
-      color: var(--text-primary);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
+        /* ── H4 ── */
+        h4 {
+            color: #1C3765;
+            font-size: 0.95em;
+            font-weight: 700;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
 
-    .nav-item.active {
-      background-color: #EDF2F7;
-      color: var(--accent-primary);
-      border-left: 4px solid var(--accent-primary);
-      font-weight: 600;
-    }
+        /* ── SECTION ── */
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 5px solid #ddd;
+        }
+        .section.global    { border-left-color: #1C3765; background: #f8fafd; border-radius: 0 4px 4px 0; }
+        .section.us        { border-left-color: #CD2036; }
+        .section.eu        { border-left-color: #FFBE3D; }
+        .section.japan     { border-left-color: #FF715B; }
+        .section.china     { border-left-color: #2DCA8C; }
+        .section.asean     { border-left-color: #1aaa72; }
+        .section.other-asia{ border-left-color: #377DFF; }
+        .section.corporate { border-left-color: #1C3765; }
+        .section.indicators{ border-left-color: #2DCA8C; }
+        .section.political { border-left-color: #CD2036; }
+        .section.summary   { border-left-color: #1C3765; background: #F4F7FC; border-radius: 0 4px 4px 0; }
 
-    .content-card {
-      background-color: var(--bg-panel);
-      border-radius: 1.25rem;
-      border: 1px solid var(--border-soft);
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
+        /* ── SENTIMENT BADGES ── */
+        .sentiment {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8em;
+            margin-top: 10px;
+            font-family: 'Space Mono', monospace;
+            letter-spacing: 0.5px;
+        }
+        .positive { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .negative { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .neutral  { background-color: #e2e3e5; color: #383d41; border: 1px solid #d6d8db; }
+        .mixed    { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
 
-    .highlight-label {
-      font-size: 0.7rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
+        /* ── CONTENT ── */
+        .content {
+            margin-top: 10px;
+            text-align: justify;
+            font-size: 14.5px;
+            line-height: 1.85;
+            color: #3a4a60;
+        }
 
-    .callout-box {
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      border-left: 4px solid transparent;
-    }
+        /* ── BULLET LIST ── */
+        .bullet-list {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+            color: #3a4a60;
+            font-size: 14.5px;
+            line-height: 1.85;
+        }
+        .bullet-list li { margin-bottom: 6px; }
 
-    .fade-in { animation: fadeIn 0.5s ease-out; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        /* ── COUNTRY BLOCK ── */
+        .country-block {
+            margin-top: 14px;
+            border: 1px solid #e8ecf2;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .country-title {
+            background: #EEF2F9;
+            padding: 7px 14px;
+            font-weight: 700;
+            font-size: 13.5px;
+            color: #1C3765;
+            border-bottom: 1px solid #dde4ef;
+        }
+        .country-body {
+            padding: 10px 14px;
+        }
+        .country-body .bullet-list { margin-top: 4px; }
 
-    .detailed-list li {
-      position: relative;
-      padding-left: 1.75rem;
-      margin-bottom: 1rem;
-    }
-    .detailed-list li::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: var(--accent-primary);
-      font-weight: bold;
-    }
+        /* ── DATA TABLE ── */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            font-size: 13.5px;
+        }
+        .data-table thead tr { background: #1C3765; color: #fff; }
+        .data-table thead th {
+            padding: 9px 12px;
+            text-align: left;
+            font-weight: 700;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 0.3px;
+        }
+        .data-table tbody tr:nth-child(even) { background: #F4F7FC; }
+        .data-table tbody tr:hover { background: #EBF2FF; }
+        .data-table tbody td {
+            padding: 9px 12px;
+            border-bottom: 1px solid #e8ecf2;
+            color: #3a4a60;
+            vertical-align: top;
+        }
 
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-thumb { background: #CBD5E0; border-radius: 10px; }
-  </style>
+        /* ── BADGE ── */
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-family: 'Space Mono', monospace;
+        }
+        .badge-neg      { background: #f8d7da; color: #721c24; }
+        .badge-neu      { background: #e2e3e5; color: #383d41; }
+        .badge-pos      { background: #d4edda; color: #155724; }
+        .badge-mixed    { background: #fff3cd; color: #856404; }
+
+        /* ── DIM LIST (summary) ── */
+        .dim-list { list-style: none; padding: 0; margin: 10px 0; }
+        .dim-list li {
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #3a4a60;
+            line-height: 1.8;
+        }
+        .dim-list li:nth-child(1) { border-left: 4px solid #CD2036; background: #fff8f8; }
+        .dim-list li:nth-child(2) { border-left: 4px solid #377DFF; background: #f0f5ff; }
+        .dim-list li:nth-child(3) { border-left: 4px solid #2DCA8C; background: #f0fdf8; }
+        .dim-list li:nth-child(4) { border-left: 4px solid #FFBE3D; background: #fffdf0; }
+        .dim-list li strong { color: #1C3765; }
+
+        /* ── FOOTER ── */
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8em;
+            text-align: center;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* ── PDF BUTTON ── */
+        .pdf-bar {
+            position: sticky;
+            top: 16px;
+            z-index: 100;
+            display: flex;
+            justify-content: flex-end;
+            margin: -10px -30px 20px -30px;
+            padding: 10px 20px;
+            pointer-events: none;
+        }
+        .btn-pdf {
+            pointer-events: all;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1C3765;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 3px 14px rgba(28,55,101,0.35);
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            text-transform: uppercase;
+        }
+        .btn-pdf:hover { background: #CD2036; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(205,32,54,0.35); }
+        .btn-pdf:active { transform: translateY(0); }
+        .btn-pdf svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        /* ── PRINT ── */
+        @media print {
+            body { background: #fff; padding: 0; font-size: 12.5px; orphans: 3; widows: 3; }
+            .container { box-shadow: none; border-radius: 0; padding: 16px 24px; max-width: 100%; }
+            .pdf-bar { display: none !important; }
+            * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .color-bar { margin: -16px -24px 20px -24px; }
+            h2 { break-after: avoid; break-before: auto; page-break-after: avoid; }
+            h3, h4 { break-after: avoid; break-inside: avoid; page-break-after: avoid; }
+            .section { break-inside: avoid; page-break-inside: avoid; }
+            .content { orphans: 3; widows: 3; }
+            .country-block { break-inside: avoid; page-break-inside: avoid; }
+            table { break-inside: avoid; page-break-inside: avoid; }
+            thead { display: table-header-group; }
+            tr { break-inside: avoid; page-break-inside: avoid; }
+            .dim-list li { break-inside: avoid; page-break-inside: avoid; }
+            h2.us         { break-before: page; page-break-before: always; }
+            h2.eu         { break-before: page; page-break-before: always; }
+            h2.japan      { break-before: page; page-break-before: always; }
+            h2.china      { break-before: page; page-break-before: always; }
+            h2.asean      { break-before: page; page-break-before: always; }
+            h2.other-asia { break-before: page; page-break-before: always; }
+            h2.corporate  { break-before: page; page-break-before: always; }
+            h2.indicators { break-before: page; page-break-before: always; }
+            h2.political  { break-before: page; page-break-before: always; }
+        }
+    </style>
 </head>
+<body>
+<div class="container">
 
-<body class="h-screen flex flex-col md:flex-row overflow-hidden">
-
-  <!-- Mobile Header -->
-  <header class="md:hidden bg-white shadow-sm p-4 flex justify-between items-center z-20 border-b">
-    <h1 class="text-xl font-bold text-gray-800 flex items-center gap-2">
-      <i class="ph ph-globe-stand text-[#0064FF]"></i> Global Intel '26
-    </h1>
-    <button id="mobile-menu-btn" class="text-gray-600">
-      <i class="ph ph-list text-2xl"></i>
-    </button>
-  </header>
-
-  <!-- Sidebar -->
-  <nav id="sidebar" class="bg-white border-r border-gray-200 w-full md:w-72 flex-shrink-0 absolute md:relative inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-30 flex flex-col h-full">
-    <div class="p-8 border-b border-gray-100 hidden md:block">
-      <h1 class="text-xl font-bold text-gray-800 flex items-center gap-2">
-        <i class="ph ph-globe-stand text-[#0064FF]"></i> Weekly Summary
-      </h1>
-      <p class="text-xs text-gray-400 mt-1 font-bold uppercase tracking-widest">สรุปเศรษฐกิจและตลาดโลก</p>
+    <!-- PDF Button -->
+    <div class="pdf-bar">
+        <button class="btn-pdf" onclick="generatePDF()">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            Export PDF
+        </button>
     </div>
 
-    <div class="flex-1 overflow-y-auto py-6">
-      <ul class="space-y-1">
-        <li>
-          <button onclick="navigateTo('global')" class="nav-item active w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="global">
-            <i class="ph ph-lightning text-lg"></i> <span>บทสรุปผู้บริหารประจำสัปดาห์</span>
-          </button>
-        </li>
-        <li class="px-8 py-4 text-xs font-bold text-gray-400 uppercase tracking-widest">การวิเคราะห์ระดับภูมิภาค</li>
-        <li>
-          <button onclick="navigateTo('west')" class="nav-item w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="west">
-            <i class="ph ph-buildings text-lg"></i> <span>ตลาดตะวันตก (US/EU)</span>
-          </button>
-        </li>
-        <li>
-          <button onclick="navigateTo('asia-giants')" class="nav-item w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="asia-giants">
-            <i class="ph ph-sun text-lg"></i> <span>ยักษ์ใหญ่เอเชีย (JP/CN)</span>
-          </button>
-        </li>
-        <li>
-          <button onclick="navigateTo('asean')" class="nav-item w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="asean">
-            <i class="ph ph-chart-polar text-lg"></i> <span>เจาะลึกอาเซียนและอินเดีย</span>
-          </button>
-        </li>
-        <li>
-          <button onclick="navigateTo('geopolitics')" class="nav-item w-full text-left px-8 py-4 hover:bg-gray-50 flex items-center gap-3 transition-all" data-target="geopolitics">
-            <i class="ph ph-shield-check text-lg"></i> <span>ภูมิรัฐศาสตร์และความเสี่ยง</span>
-          </button>
-        </li>
-      </ul>
+    <!-- Color Bar -->
+    <div class="color-bar">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <div class="p-6 border-t border-gray-100 bg-gray-50">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600">
-          <i class="ph ph-calendar"></i>
+    <h1>Global Market Summary</h1>
+    <p style="text-align:center; font-weight:600; color:#1C3765; margin-top:-6px; margin-bottom:20px;">10 – 25 กุมภาพันธ์ 2026</p>
+
+    <!-- ══ GLOBAL OVERVIEW ══ -->
+    <h2 class="global">🌐 GLOBAL OVERVIEW</h2>
+
+    <div class="section global">
+        <div class="content">
+            ในช่วงครึ่งเดือน ก.พ. ที่ผ่านมา ภูมิทัศน์เศรษฐกิจโลกก้าวเข้าสู่ <strong>ภาวะความผันผวนเชิงโครงสร้าง</strong> อย่างชัดเจน โดยได้รับแรงกดดันจากการปะทะกันระหว่างนโยบายกีดกันทางการค้าที่เข้มข้นขึ้นของสหรัฐฯ และวิวัฒนาการของเทคโนโลยี AI ที่สร้างทั้งโอกาสและความตื่นตระหนก
         </div>
-        <div>
-          <p class="text-xs text-gray-500">อัปเดต: 27 กุมภาพันธ์ 2026</p>
-          <p class="text-xs font-bold text-blue-600">สัปดาห์ที่ 4</p>
+
+        <h4>🔴 จุดเปลี่ยนนโยบายภาษีและสงครามการค้าสหรัฐฯ</h4>
+        <div class="content">
+            พลวัตทางการค้าโลกเกิดการเปลี่ยนแปลงครั้งใหญ่หลังจากศาลฎีกาสหรัฐฯ มีมติยกเลิกมาตรการภาษีศุลกากรแบบต่างตอบแทน (Reciprocal Tariffs) ที่อาศัยอำนาจตาม IEEPA ส่งผลให้ <strong>(23 ก.พ.)</strong> ประธานาธิบดี Trump ตอบโต้ด้วยการประกาศจัดเก็บภาษีนำเข้า <strong>15% ทั่วโลก</strong> ผ่านการใช้อำนาจตามมาตรา 122 ซึ่งเป็นระดับสูงสุดที่กฎหมายอนุญาตได้ชั่วคราว เหตุการณ์นี้กระตุ้นให้เกิดปฏิกิริยาตอบโต้ทันที โดย <strong>(24 ก.พ.)</strong> สหภาพยุโรปประกาศระงับกระบวนการให้สัตยาบันข้อตกลงการค้ากับสหรัฐฯ ขณะที่อินเดียตัดสินใจเลื่อนการเจรจาทางการค้าออกไปเพื่อประเมินผลกระทบ
         </div>
-      </div>
+
+        <h4>🤖 ปรากฏการณ์ "AI Scare Trade" และความผันผวนในกลุ่มเทคโนโลยี</h4>
+        <div class="content">
+            <strong>(23–24 ก.พ.)</strong> ตลาดเผชิญกับภาวะ <strong>AI Jitters</strong> อย่างรุนแรง หลังจาก Anthropic เปิดตัว "Claude Code" ที่มีขีดความสามารถปรับปรุงภาษา COBOL ได้อย่างรวดเร็ว ส่งผลให้หุ้น IBM ร่วงลงถึง <strong>-13%</strong> ซึ่งเป็นการปรับตัวลงรายวันที่รุนแรงที่สุดนับตั้งแต่ปี 2000 ก่อนที่ความกังวลจะเริ่มคลี่คลาย <strong>(25 ก.พ.)</strong> เมื่อ Anthropic ออกแถลงการณ์เน้นย้ำการสร้างพันธมิตรเชิงบูรณาการ และ AMD บรรลุข้อตกลงสำคัญกับ Meta Platforms ในการจัดหาชิป AI
+        </div>
+
+        <h4>📊 พลวัตของนโยบายการเงินและตลาดแรงงานสหรัฐฯ</h4>
+        <div class="content">
+            ข้อมูลเศรษฐกิจสหรัฐฯ แสดงถึงความแข็งแกร่งเกินคาด เริ่มจากตัวเลขการจ้างงานนอกภาคเกษตร <strong>(12 ก.พ.)</strong> ที่พุ่งขึ้น <strong>1.3 แสนตำแหน่ง</strong> (สูงกว่าคาด 2 เท่า) ขณะที่เงินเฟ้อ CPI <strong>(16 ก.พ.)</strong> ชะลอตัวลงสู่ 2.4% ส่งผลให้ตลาด Swap ปรับเพิ่มน้ำหนักการคงดอกเบี้ย โดย <strong>(17 ก.พ.)</strong> ตลาดได้ Fully Priced in การลดดอกเบี้ยครั้งแรกไปไว้ในเดือน ก.ค.
+        </div>
+
+        <h4>⚠️ ความตึงเครียดทางภูมิรัฐศาสตร์ในตะวันออกกลาง</h4>
+        <div class="content">
+            ปัจจัยเสี่ยงทางภูมิรัฐศาสตร์เร่งตัวขึ้นอย่างมีนัยสำคัญเมื่อประธานาธิบดี Trump ประกาศขีดเส้นตาย <strong>15 วัน</strong> เริ่มตั้งแต่ <strong>(20 ก.พ.)</strong> ให้อิหร่านบรรลุข้อตกลงนิวเคลียร์ พร้อมระดมกำลังทหารเข้าสู่ภูมิภาค สะท้อนผ่าน Risk Premium ที่พุ่งสูงในตลาดน้ำมัน และเป็นแรงส่งให้ <strong>ราคาทองคำทำสถิติสูงสุดใหม่</strong> จากแรงซื้อสินทรัพย์ปลอดภัย
+        </div>
     </div>
-  </nav>
 
-  <!-- Main Content -->
-  <main class="flex-1 overflow-y-auto relative p-6 md:p-12" id="main-content">
-    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-30 z-20 hidden md:hidden"></div>
-    
-    <div class="max-w-4xl mx-auto">
+    <!-- ══ US ══ -->
+    <h2 class="us">🇺🇸 UNITED STATES</h2>
 
-      <!-- VIEW: WEEKLY SUMMARY -->
-      <section id="view-global" class="view-section fade-in">
-        <div class="mb-12">
-          <span class="highlight-label text-blue-600">Market Pulse: Week 4</span>
-          <h1 class="text-3xl font-bold text-gray-800 leading-tight">สัปดาห์แห่งการผันผวนของค่าเงินและนโยบายการค้า</h1>
-          <p class="mt-4 text-lg text-gray-500 font-light">ดอลลาร์แข็งค่าสูงสุดในรอบ 4 เดือน ท่ามกลางการปรับเปลี่ยนนโยบายภาษีศุลกากรโดยศาลสูงสุดสหรัฐฯ</p>
+    <div class="section us">
+        <span class="sentiment negative">⬤ NEGATIVE</span>
+
+        <h4>ตลาดหุ้น</h4>
+        <div class="content">
+            ดัชนี S&amp;P 500 เคลื่อนไหวในกรอบแคบ <strong>6,800–7,000 จุด</strong> สะท้อนภาวะ "Wait-and-see" นักลงทุนทำการ Rotation ออกจากกลุ่ม Mega-cap Tech และ Software ที่ถูกกดดันจาก AI Jitters (โดยเฉพาะวันที่ 23 ก.พ.) เข้าสู่กลุ่มพลังงานและสินค้าจำเป็น (Defensive) เพื่อป้องกันความเสี่ยงจากกำแพงภาษีและต้นทุนการผลิตที่พุ่งสูงขึ้น
         </div>
 
-        <div class="content-card">
-          <h2 class="text-2xl font-bold text-gray-800 mb-6">ไฮไลท์สำคัญประจำสัปดาห์</h2>
-          <ul class="detailed-list text-sm text-gray-700">
-            <li><strong>USD Dominance:</strong> เงินดอลลาร์สหรัฐทำสถิติพุ่งสูงที่สุดในรอบสัปดาห์ในรอบ 4 เดือน ขานรับข้อมูลเศรษฐกิจที่แข็งแกร่งและท่าทีเชิงรุก (Hawkish) ของ Fed</li>
-            <li><strong>Tariff Turnaround:</strong> ศาลสูงสุดสหรัฐฯ ยกเลิกภาษีศุลกากรบางส่วนของยุค Trump ส่งผลให้ตลาดหุ้นทั่วโลกขานรับเชิงบวกชั่วคราว แต่ยังคงมีความไม่แน่นอนจากการประกาศภาษีชั่วคราวใหม่</li>
-            <li><strong>OpenAI Hardware:</strong> OpenAI ประกาศแผนรุกตลาดฮาร์ดแวร์ เตรียมทีมงานกว่า 200 คนพัฒนาลำโพงอัจฉริยะ (ปี 2027) และแว่นตาอัจฉริยะ (ปี 2028)</li>
-            <li><strong>Japan's Mixed Signals:</strong> GDP ญี่ปุ่นโตเพียง 0.2% แต่ภาคการผลิตพุ่งสูงสุดในรอบ 4 ปี กดดันให้ BoJ ต้องพิจารณาการขึ้นดอกเบี้ยอย่างระมัดระวัง</li>
-            <li><strong>Emerging Markets Success:</strong> อินโดนีเซียบรรลุข้อตกลงการค้ากับสหรัฐฯ ช่วยลดภาษีสินค้าโภคภัณฑ์สำคัญ และอินเดียรายงานการเติบโตของภาคเอกชนที่แข็งแกร่ง</li>
-          </ul>
-
-          <div class="callout-box bg-blue-50 border-blue-200 grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-8">
-            <div>
-              <span class="highlight-label text-gray-400">USD Weekly Gain</span>
-              <p class="text-2xl font-bold text-blue-600">4-Mo High</p>
-            </div>
-            <div>
-              <span class="highlight-label text-gray-400">OpenAI HW Team</span>
-              <p class="text-2xl font-bold text-gray-800">200+</p>
-            </div>
-            <div>
-              <span class="highlight-label text-gray-400">Japan GDP (Q4)</span>
-              <p class="text-2xl font-bold text-red-600">0.2%</p>
-            </div>
-            <div>
-              <span class="highlight-label text-gray-400">UK Inflation</span>
-              <p class="text-2xl font-bold text-green-600">3.0%</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- VIEW: WESTERN MARKETS -->
-      <section id="view-west" class="view-section hidden fade-in">
-        <div class="mb-12">
-          <span class="highlight-label text-blue-600">US & Europe Analysis</span>
-          <h1 class="text-3xl font-bold text-gray-800 leading-tight">เศรษฐกิจตะวันตก: นโยบายการเงินและความเสี่ยงทางการคลัง</h1>
+        <h4>ตลาดพันธบัตร</h4>
+        <div class="content">
+            อัตราผลตอบแทนพันธบัตร 10 ปี เคลื่อนไหวในช่วง <strong>4.04%–4.18%</strong> โดยได้รับแรงกดดันจากตัวเลขการจ้างงานที่แข็งแกร่งสวนทางกับยอดค้าปลีก (11 ก.พ.) และดัชนี PCE ที่เร่งตัวขึ้นสู่ 2.9% (23 ก.พ.) ขณะที่การประมูลพันธบัตรอายุ 10 ปี (18 ก.พ.) พบอุปสงค์ที่เบาบาง เนื่องจากนักลงทุนกังวลเรื่องการขาดดุลงบประมาณมูลค่ากว่า <strong>1.3 แสนล้านดอลลาร์</strong>
         </div>
 
-        <div class="content-card mb-8">
-          <h3 class="text-lg font-bold text-gray-800 mb-4 uppercase tracking-tighter flex items-center gap-2">
-            <i class="ph ph-bank text-blue-600"></i> United States: ความแตกแยกใน Fed และหนี้สาธารณะ
-          </h3>
-          <ul class="detailed-list text-sm text-gray-700">
-            <li><strong>Fed Division:</strong> เจ้าหน้าที่ Fed ยังคงเสียงแตกเรื่องทิศทางดอกเบี้ย บางส่วนมองว่ายังไม่มีความจำเป็นต้องรีบลดดอกเบี้ยเนื่องจากเงินเฟ้อ PCE ยังสูงกว่าเป้าหมาย</li>
-            <li><strong>Slow Growth:</strong> GDP Q4 ของสหรัฐฯ ชะลอตัวลงเหลือ 1.4% และตลาดแรงงานเริ่มมีสัญญาณอ่อนตัว แม้ภาคการลงทุน AI จะยังแข็งแกร่ง</li>
-            <li><strong>Trade Deficit:</strong> การขาดดุลการค้าพุ่งทำสถิติ 1.24 ล้านล้านดอลลาร์ในปี 2025 ท่ามกลางความวุ่นวายทางกฎหมายเกี่ยวกับอำนาจการจัดเก็บภาษีศุลกากรของประธานาธิบดี</li>
-          </ul>
+        <h4>ค่าเงินดอลลาร์ฯ</h4>
+        <div class="content">
+            ดัชนี DXY ทรงตัวแข็งแกร่งในระดับ <strong>96.8–97.9</strong> โดยได้รับแรงหนุนจากสถานะสินทรัพย์ปลอดภัยในช่วง Risk-off แม้ความไม่แน่นอนของนโยบายการค้าจะสร้างความสับสนในทิศทางระยะยาวก็ตาม
         </div>
-
-        <div class="content-card">
-          <h3 class="text-lg font-bold text-gray-800 mb-4 uppercase tracking-tighter flex items-center gap-2">
-            <i class="ph ph-chart-line-up text-blue-900"></i> Europe: เงินเฟ้อชะลอตัวและความไม่แน่นอนใน ECB
-          </h3>
-          <ul class="detailed-list text-sm text-gray-700">
-            <li><strong>Inflation Drop:</strong> เงินเฟ้อในสหราชอาณาจักรลดลงเหลือ 3.0% กระตุ้นความหวังการลดดอกเบี้ยในเดือนมีนาคม ขณะที่เงินเฟ้อในฝรั่งเศสต่ำเพียง 0.4%</li>
-            <li><strong>ECB Succession:</strong> ข่าวลือการลงจากตำแหน่งก่อนกำหนดของ Christine Lagarde สร้างความไม่แน่นอนในการสืบทอดตำแหน่งและทิศทางนโยบายในอนาคต</li>
-            <li><strong>German Fiscal Discipline:</strong> เยอรมนียังคงยึดมั่นในวินัยการคลัง (Debt Brake) โดยไม่มีแผนจะผ่อนปรนจนกว่าจะถึงปี 2029</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- VIEW: ASIA GIANTS -->
-      <section id="view-asia-giants" class="view-section hidden fade-in">
-        <div class="mb-12">
-          <span class="highlight-label text-red-600">Asia Pacific Powers</span>
-          <h1 class="text-3xl font-bold text-gray-800 leading-tight">ยักษ์ใหญ่เอเชีย: ญี่ปุ่น และ จีน</h1>
-        </div>
-
-        <div class="content-card border-t-4 border-[#EF3C67]">
-          <h3 class="text-xl font-bold text-gray-800 mb-6">Japan: ภาคการผลิตที่แข็งแกร่งขัดแย้งกับ GDP</h3>
-          <ul class="detailed-list text-sm text-gray-700">
-            <li><strong>Manufacturing Peak:</strong> ดัชนี PMI ภาคการผลิตพุ่งสูงสุดในรอบ 4 ปีในเดือนกุมภาพันธ์ สวนทางกับตัวเลข GDP ที่อ่อนแอ</li>
-            <li><strong>Yen Volatility:</strong> เงินเยนผันผวนหนักจากการเก็งกำไรนโยบาย BoJ และการทำ Yen Carry Trade ที่เริ่มเข้าสู่ระดับที่ "ไม่ยั่งยืน"</li>
-            <li><strong>Fiscal Pressure:</strong> ภาระการชำระหนี้ของญี่ปุ่นพุ่งสูงขึ้น 28% ภายในปี 2029 ขณะที่รัฐบาลยังพิจารณามาตรการกระตุ้นเศรษฐกิจใหม่ๆ</li>
-          </ul>
-        </div>
-
-        <div class="content-card border-t-4 border-[#F6AD55]">
-          <h3 class="text-xl font-bold text-gray-800 mb-6">China: การเจรจาการค้าเพื่อลดแรงกดดันจากสหรัฐฯ</h3>
-          <ul class="detailed-list text-sm text-gray-700">
-            <li><strong>Trade Diplomacy:</strong> จีนเร่งการเจรจาการค้ากับหลายประเทศเพื่อตอบโต้แรงกดดันด้านภาษีจากสหรัฐฯ รวมถึงการลดภาษีรถยนต์ไฟฟ้า (EV) เพื่อขยายตลาดสู่แอฟริกา</li>
-            <li><strong>Economic Headwinds:</strong> แม้จะพยายามกระตุ้นการค้า แต่ความเชื่อมั่นผู้บริโภคยังคงเป็นปัจจัยท้าทายหลักในการฟื้นตัวอย่างเต็มรูปแบบ</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- VIEW: ASEAN & INDIA -->
-      <section id="view-asean" class="view-section hidden fade-in">
-        <div class="mb-12">
-          <span class="highlight-label text-green-600">Emerging Growth</span>
-          <h1 class="text-3xl font-bold text-gray-800 leading-tight">อาเซียนและอินเดีย: จุดยุทธศาสตร์การค้าและการลงทุน</h1>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="content-card mb-0">
-            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <i class="ph ph-flag text-blue-600"></i> Indonesia
-            </h3>
-            <p class="text-sm text-gray-600">ประสบความสำเร็จในการทำข้อตกลงการค้ากับสหรัฐฯ ช่วยลดกำแพงภาษีและเปิดทางให้สินค้าส่งออกหลักได้รับการยกเว้นภาษีพิเศษ</p>
-          </div>
-          <div class="content-card mb-0">
-            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <i class="ph ph-chart-bar text-orange-600"></i> India
-            </h3>
-            <p class="text-sm text-gray-600">ภาคเอกชนขยายตัวอย่างแข็งแรงทั้งภาคการผลิตและบริการ แม้ RBI จะยังคงดอกเบี้ยในระดับสูงเพื่อคุมเงินเฟ้อให้อยู่ในกรอบเป้าหมาย</p>
-          </div>
-          <div class="content-card mb-0">
-            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <i class="ph ph-buildings text-purple-600"></i> Philippines
-            </h3>
-            <p class="text-sm text-gray-600">เดินหน้าลดดอกเบี้ยต่อเนื่องเพื่อประคองเศรษฐกิจที่เติบโตต่ำกว่าคาด และจัดการกับผลกระทบจากคดีคอรัปชั่นระดับชาติ</p>
-          </div>
-          <div class="content-card mb-0">
-            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <i class="ph ph-users text-green-600"></i> Emerging Markets
-            </h3>
-            <p class="text-sm text-gray-600">กองทุนหุ้นตลาดเกิดใหม่ดึงดูดเม็ดเงินไหลเข้าอย่างต่อเนื่อง สะท้อนความเชื่อมั่นในการกระจายความเสี่ยงจากการลงทุนในกลุ่ม Tech สหรัฐฯ</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- VIEW: GEOPOLITICS -->
-      <section id="view-geopolitics" class="view-section hidden fade-in">
-        <div class="mb-12">
-          <span class="highlight-label text-red-700">Risk & Strategy</span>
-          <h1 class="text-3xl font-bold text-gray-800 leading-tight">ความเสี่ยงด้านภูมิรัฐศาสตร์และผลกระทบตลาด</h1>
-        </div>
-
-        <div class="content-card bg-red-50 border-red-100">
-          <h3 class="text-xl font-bold text-red-800 mb-4">ประเด็นร้อนแรง: สหรัฐฯ-อิหร่าน และน้ำมันโลก</h3>
-          <p class="text-sm text-red-700 mb-6">ความตึงเครียดที่เพิ่มสูงขึ้นส่งผลให้ราคาน้ำมันพุ่งแตะระดับสูงสุดในรอบหลายเดือน นักลงทุนกำลังจับตาดูการหยุดชะงักของห่วงโซ่อุปทานที่เป็นไปได้</p>
-          
-          <div class="space-y-4">
-            <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm">
-              <div class="p-2 bg-red-100 text-red-600 rounded-lg"><i class="ph ph-warning-circle"></i></div>
-              <div>
-                <p class="text-sm font-bold">Lula's Push:</p>
-                <p class="text-xs text-gray-500">ประธานาธิบดีบราซิลเสนอให้ใช้สกุลเงินท้องถิ่นในการค้าภายในกลุ่ม BRICS แทนดอลลาร์สหรัฐ</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm">
-              <div class="p-2 bg-blue-100 text-blue-600 rounded-lg"><i class="ph ph-shield"></i></div>
-              <div>
-                <p class="text-sm font-bold">US-China Tech War:</p>
-                <p class="text-xs text-gray-500">รัฐเท็กซัสฟ้องบริษัท TP-Link ข้อหาละเมิดความเป็นส่วนตัวและเปิดทางให้รัฐบาลจีนเข้าถึงข้อมูล</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
-  </main>
 
-  <script>
-    const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('.view-section');
+    <!-- ══ EU ══ -->
+    <h2 class="eu">🇪🇺 EUROPEAN UNION</h2>
 
-    function navigateTo(targetId) {
-      // Sidebar Active State
-      navItems.forEach(item => {
-        if (item.dataset.target === targetId) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
+    <div class="section eu">
+        <span class="sentiment neutral">⬤ NEUTRAL / CAUTIOUS</span>
+
+        <h4>ตลาดหุ้น</h4>
+        <div class="content">
+            ดัชนี Stoxx 600 เคลื่อนไหวอย่างแข็งแกร่งและทำสถิติเข้าใกล้ระดับ All-Time High (<strong>ปรับขึ้นราว +6% YTD</strong>) ทำผลงานได้ดีกว่าตลาดสหรัฐฯ เนื่องจากมีสัดส่วนหุ้นกลุ่มเทคโนโลยีน้อยกว่า นักลงทุนทำการ Rotation เข้าสู่ตลาดยุโรปเพื่อกระจายความเสี่ยงจาก AI Jitters โดยเน้นกลุ่มสินค้าหรูหรา (Kering, Hermes), อุตสาหกรรม, การเงิน และกลุ่มป้องกันประเทศ (Defense) ขณะที่หุ้นซอฟต์แวร์อย่าง Dassault Systemes เผชิญแรงเทขายหนัก
+        </div>
+
+        <h4>ตลาดพันธบัตร</h4>
+        <div class="content">
+            อัตราผลตอบแทนพันธบัตรรัฐบาลเยอรมนีอายุ 2 ปี เคลื่อนไหวในกรอบ <strong>2.06%–2.07%</strong> ขณะที่ Spread ระหว่างพันธบัตรฝรั่งเศสและเยอรมนีอายุ 10 ปี แคบลงสู่ระดับ <strong>56–57 bps</strong> เข้าใกล้ระดับก่อนวิกฤตเลือกตั้งด่วน หลังศาลรัฐธรรมนูญฝรั่งเศสผ่านร่างงบประมาณ ในฝั่งสหราชอาณาจักร Gilts ผันผวนตามคาดการณ์การลดดอกเบี้ยของ BoE แม้เงินเฟ้อภาคบริการ (Services CPI) ยังหนืดสูงที่ <strong>4.4%</strong>
+        </div>
+
+        <h4>ค่าเงินยูโรและปอนด์</h4>
+        <div class="content">
+            ค่าเงินยูโร (EUR/USD) เคลื่อนไหวในกรอบ <strong>1.1770–1.1900</strong> ได้รับแรงหนุนจากยอดเกินดุลบัญชีเดินสะพัดที่แข็งแกร่งและกระแสเงินทุนหลีกเลี่ยงความไม่แน่นอนของภาษีสหรัฐฯ แม้กระแสข่าวลือเรื่องการลาออกก่อนกำหนดของประธาน ECB (Christine Lagarde) จะกดดันช่วงสั้นๆ ขณะที่ค่าเงินปอนด์ (GBP) เผชิญแรงกดดันต่อเนื่องจากความเสี่ยงที่ BoE อาจต้องผ่อนคลายนโยบายมากกว่าคาด
+        </div>
+    </div>
+
+    <!-- ══ JAPAN ══ -->
+    <h2 class="japan">🇯🇵 JAPAN</h2>
+
+    <div class="section japan">
+        <span class="sentiment mixed">⬤ MIXED</span>
+
+        <h4>ตลาดหุ้น</h4>
+        <div class="content">
+            ดัชนี Nikkei และ Topix มีทิศทางเชิงบวกและถูกมองว่าเป็นตลาดทางเลือกเพื่อกระจายความเสี่ยงจากสหรัฐฯ โดยได้รับแรงหนุนจากชัยชนะการเลือกตั้งของนายกฯ Sanae Takaichi อย่างไรก็ตาม ตลาดเผชิญความผันผวนจากตัวเลข GDP Q4/2025 ที่ขยายตัวเพียง <strong>0.1%</strong> และมีแรงเทขายทำกำไรหลังจากดัชนีแตะ Valuation สูงในรอบหลายทศวรรษ (20 ก.พ.)
+        </div>
+
+        <h4>ตลาดพันธบัตร</h4>
+        <div class="content">
+            อัตราผลตอบแทนพันธบัตร 10 ปี (JGBs) เคลื่อนไหวในกรอบ <strong>2.070%–2.210%</strong> โดยเส้นอัตราผลตอบแทนมีลักษณะแบนราบลง (Curve Flattening) ท่ามกลางแรงซื้อจากนักลงทุนต่างชาติ ตลาดยังได้รับแรงหนุนจากการคลายความกังวลด้านการคลังและการประมูลพันธบัตรอายุ 5 ปี และ 20 ปี ที่พบอุปสงค์แข็งแกร่ง (18–19 ก.พ.)
+        </div>
+
+        <h4>ค่าเงินเยน</h4>
+        <div class="content">
+            ค่าเงินเยน (USD/JPY) ผันผวนในกรอบ <strong>152.84–155.86</strong> โดยในช่วงแรกแข็งค่าจากส่วนต่างอัตราผลตอบแทนที่แคบลงก่อนจะกลับมาอ่อนค่าทะลุ 155 รั้งท้ายกลุ่ม G-10 จากส่วนต่างดอกเบี้ยกับสหรัฐฯ ที่กว้างขึ้น และความกังวลที่นายกฯ ญี่ปุ่นส่งสัญญาณไม่เห็นด้วยกับการขึ้นดอกเบี้ยของ BoJ (24 ก.พ.)
+        </div>
+    </div>
+
+    <!-- ══ CHINA ══ -->
+    <h2 class="china">🇨🇳 CHINA &amp; HONG KONG</h2>
+
+    <div class="section china">
+        <span class="sentiment positive">⬤ POSITIVE</span>
+
+        <h4>ตลาดหุ้น</h4>
+        <div class="content">
+            ตลาดหุ้นจีนแผ่นดินใหญ่ปิดทำการส่วนใหญ่ในช่วงเทศกาลตรุษจีน แต่ก่อนหน้านั้นและในฝั่งฮ่องกง ดัชนีได้รับแรงหนุนจากการที่นักลงทุนทำการ Rotation เข้าสู่หุ้นกลุ่ม <strong>AI Ecosystem, สตาร์ทอัพ AI</strong> (เช่น Zhipu และ MiniMax) และ Robotics อย่างโดดเด่น ขณะที่หุ้นกลุ่มอินเทอร์เน็ตและเทคโนโลยีขนาดใหญ่แบบดั้งเดิมกลับเผชิญแรงกดดัน
+        </div>
+
+        <h4>ค่าเงินหยวน</h4>
+        <div class="content">
+            ค่าเงินหยวน (USD/CNH) แข็งค่าขึ้นทำสถิติสูงสุดในรอบเกือบ <strong>3 ปี</strong> เคลื่อนไหวในกรอบ <strong>6.87–6.91</strong> โดยได้รับแรงหนุนจากการที่ทางการจีนส่งสัญญาณให้ธนาคารลดการถือครองพันธบัตรสหรัฐฯ และความไม่แน่นอนของนโยบายกำแพงภาษีสหรัฐฯ ที่ทำให้นักลงทุนมองว่าจีนมีอำนาจต่อรองที่เพิ่มขึ้น (23 ก.พ.)
+        </div>
+    </div>
+
+    <!-- ══ ASEAN ══ -->
+    <h2 class="asean">🌏 ASEAN</h2>
+
+    <div class="section asean">
+        <span class="sentiment mixed">⬤ MIXED</span>
+
+        <div class="country-block">
+            <div class="country-title">🇹🇭 ไทย (Thailand)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(10–11 ก.พ.)</strong> ตลาดหุ้นฟื้นตัวแรงและนักลงทุนต่างชาติซื้อสุทธิสูงสุดในรอบ 4 ปี ตอบรับความชัดเจนในการจัดตั้งรัฐบาลผสมภายใต้การนำของพรรคภูมิใจไทย</li>
+                    <li><strong>(12–13 ก.พ.)</strong> World Bank ปรับลดเป้า GDP ปี 2026 เหลือเพียง <strong>1.6%</strong> จากปัจจัยกดดันด้านหนี้ครัวเรือน ขณะที่ Fitch Ratings ระบุว่าเสถียรภาพของรัฐบาลชุดใหม่คือกุญแจสำคัญต่ออันดับเครดิต</li>
+                    <li><strong>(19–20 ก.พ.)</strong> ดัชนีความเชื่อมั่นค้าปลีกลดลงฮวบฮาบจากความกังวลการเมือง และมีประเด็นคำเตือนเรื่องบาร์โค้ดในบัตรเลือกตั้งที่อาจทำลายความลับของการลงคะแนน</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇮🇩 อินโดนีเซีย (Indonesia)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(11–12 ก.พ.)</strong> รัฐบาลสั่งลดโควตาการผลิตนิกเกิลครั้งใหญ่ (เหลือ 12 ล้านตัน จาก 42 ล้านตัน) เพื่อพยุงราคาในตลาดโลก</li>
+                    <li><strong>(16–17 ก.พ.)</strong> ประธานาธิบดี Prabowo สั่งปลดหัวหน้า OJK และประธานตลาดหลักทรัพย์ หลังตลาดหุ้นดิ่งหนัก</li>
+                    <li><strong>(19–20 ก.พ.)</strong> บรรลุข้อตกลงการค้ากับสหรัฐฯ ลดภาษีนำเข้าแลกกับการที่อินโดนีเซียจะซื้อสินค้าสหรัฐฯ มูลค่า <strong>3.3 หมื่นล้านดอลลาร์</strong> ขณะที่ธนาคารกลาง (BI) คงดอกเบี้ยที่ 4.75%</li>
+                    <li><strong>(20–23 ก.พ.)</strong> ยอมรับเงื่อนไข Poison Pill ในข้อตกลงการค้าสหรัฐฯ และขยายเวลาดำเนินงานเหมือง Grasberg</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇵🇭 ฟิลิปปินส์ (Philippines)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(17–18 ก.พ.)</strong> กระทรวงต่างประเทศประณามคำเตือนของจีนเรื่องคนฟิลิปปินส์นับล้านอาจตกงานว่าเป็น "พฤติกรรมข่มขู่" ท่ามกลางความขัดแย้งในทะเลจีนใต้</li>
+                    <li><strong>(19–20 ก.พ.)</strong> ธนาคารกลาง (BSP) ปรับลดอัตราดอกเบี้ย <strong>25 bps</strong> สู่ 4.25% เพื่อกระตุ้นเศรษฐกิจ</li>
+                    <li><strong>(23–24 ก.พ.)</strong> สภาผู้แทนราษฎรเริ่มต้นกระบวนการถอดถอนรองประธานาธิบดี Sara Duterte ขณะที่กรรมาธิการท่องเที่ยวผ่านข้อเสนอยกเลิกภาษีการเดินทาง</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇸🇬 สิงคโปร์ (Singapore)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(16–17 ก.พ.)</strong> ยอดส่งออก NODX เดือน ม.ค. ขยายตัว <strong>9.3% YoY</strong> ติดต่อกันเป็นเดือนที่ 5 หนุนโดยอุปสงค์สินค้า AI</li>
+                    <li><strong>(24–25 ก.พ.)</strong> รัฐบาลเตรียมร่างกฎหมาย Digital Infrastructure Act (DIA) เพื่อคุมเข้มกฎระเบียบด้านพลังงานของ Data Center และผู้ให้บริการ Cloud</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇲🇾 มาเลเซีย (Malaysia)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(20–23 ก.พ.)</strong> นายกฯ Anwar Ibrahim ระบุจะรอการประเมินผลกระทบจาก MITI ก่อนตัดสินใจตอบโต้มาตรการภาษี 15% ของสหรัฐฯ</li>
+                    <li><strong>(24–25 ก.พ.)</strong> ประกาศระงับการพัฒนา Data Center แห่งใหม่ที่ไม่ใช่ AI เนื่องจากความกังวลด้านความต้องการใช้ไฟฟ้าและน้ำ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇻🇳 เวียดนาม (Vietnam)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(11–12 ก.พ.)</strong> เตรียมรับเงินลงทุน <strong>1 หมื่นล้านดอลลาร์</strong> จากสิงคโปร์เพื่อสร้างศูนย์กลางทางการเงินนานาชาติแห่งใหม่</li>
+                    <li><strong>(12–13 ก.พ.)</strong> เม็ดเงิน FDI ไหลเข้าทำสถิติสูงสุดในรอบ 5 ปี นำโดยภาคการผลิต และพรรคคอมมิวนิสต์ตั้งเป้า GDP ช่วงปี 2026–2030 เติบโตสูงถึง <strong>10%</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ OTHER ASIA ══ -->
+    <h2 class="other-asia">🌏 OTHER ASIA &amp; EMERGING MARKETS</h2>
+
+    <div class="section other-asia">
+        <span class="sentiment positive">⬤ POSITIVE (selective)</span>
+
+        <div class="country-block">
+            <div class="country-title">🇰🇷 เกาหลีใต้ (South Korea)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(12–13 ก.พ.)</strong> แม้ดัชนีปรับฐานตามภูมิภาค แต่ยังเป็นตลาดหุ้นที่ทำผลงานดีที่สุดในโลก (<strong>+31% YTD</strong>) หนุนโดยหุ้นกลุ่มชิป AI</li>
+                    <li><strong>(20–23 ก.พ.)</strong> ราคาหุ้น Mirae Asset พุ่งขึ้นกว่า <strong>200%</strong> จากการเก็งกำไรเพื่อเป็นตัวแทนการลงทุนใน SpaceX</li>
+                    <li><strong>(24–25 ก.พ.)</strong> ดัชนี Kospi ทำสถิติ All-Time High ใหม่และบวกสูงถึง <strong>+43% YTD</strong> รับเม็ดเงินที่ไหลออกจากสหรัฐฯ เข้าสู่หุ้น Samsung และ SK Hynix</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇹🇼 ไต้หวัน (Taiwan)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(12–13 ก.พ.)</strong> บรรลุข้อตกลงการค้ากับสหรัฐฯ เพื่อลดกำแพงภาษีและรับเม็ดเงินลงทุนโครงการพลังงานและเทคโนโลยี</li>
+                    <li><strong>(19–20 ก.พ.)</strong> ไต้หวันแซงหน้าจีนขึ้นเป็นแหล่งนำเข้าสินค้าอันดับต้นๆ ของสหรัฐฯ ดัน Valuation หุ้นกลุ่มเทคฯ พุ่ง</li>
+                    <li><strong>(24–25 ก.พ.)</strong> หุ้น TSMC ทำจุดสูงสุดเป็นประวัติการณ์ รับอุปสงค์ชิปโครงสร้างพื้นฐาน AI</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇮🇳 อินเดีย (India)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(19–20 ก.พ.)</strong> ผลประกอบการบริษัทใน Q4 ฟื้นตัวเด่น ดึงดูดเงินทุนต่างชาติไหลกลับเข้าตลาด <strong>1.4 พันล้านดอลลาร์</strong></li>
+                    <li><strong>(20–23 ก.พ.)</strong> ตัดสินใจเลื่อนการเจรจาข้อตกลงการค้ากับสหรัฐฯ ออกไปท่ามกลางความไม่แน่นอนของนโยบายภาษี Trump</li>
+                    <li><strong>(24–25 ก.พ.)</strong> ตลาดหุ้นร่วงสวนทางเอเชีย โดยเฉพาะหุ้นกลุ่มซอฟต์แวร์ถูกเทขายหนักจากความกังวลว่า AI จะเข้ามาแย่งงานนักพัฒนา</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇦🇺 ออสเตรเลีย (Australia)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(17–18 ก.พ.)</strong> รายงานการประชุมชี้ว่า RBA ส่งสัญญาณไม่รีบปรับขึ้นดอกเบี้ย</li>
+                    <li><strong>(23–24 ก.พ.)</strong> ตลาดประเมินใหม่ว่า RBA อาจจำเป็นต้องขึ้นดอกเบี้ยอีก <strong>35 bps</strong> ในปีนี้เพื่อคุมเงินเฟ้อ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🌎 บราซิล และเม็กซิโก (Latin America)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>(11–12 ก.พ.)</strong> กระแสเงินทุนไหลออกจากเม็กซิโกเข้าสู่บราซิล เนื่องจากความเสี่ยงที่ Trump ขู่ถอนตัวจากข้อตกลง USMCA</li>
+                    <li><strong>(23–24 ก.พ.)</strong> เศรษฐกิจเม็กซิโกเสี่ยงหนักหลัง GDP โตชะลอเพียง <strong>0.6%</strong> ค่า CDS พุ่งสูง ท่ามกลางดอกเบี้ย Banxico ที่ค้างระดับ 7% และปัญหาความรุนแรงจากกลุ่มค้ายาที่ปะทุขึ้น</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇨🇱 ชิลี (Chile) &amp; 🇿🇦 แอฟริกาใต้ (South Africa)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li><strong>ชิลี (16–17 ก.พ.):</strong> ตลาดหุ้นและพันธบัตรพุ่งขานรับการเตรียมเปลี่ยนผ่านขั้วการเมืองสู่ฝ่ายขวา พร้อมความหวังนโยบายลดภาษีและกฎระเบียบ</li>
+                    <li><strong>แอฟริกาใต้ (18–19 ก.พ.):</strong> ตลาดพันธบัตรได้รับแรงหนุนและดึงดูดเงินทุนต่างชาติ หลังเงินเฟ้อชะลอตัวเข้าสู่เป้าหมาย <strong>3.5%</strong> สำเร็จ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ CORPORATE HIGHLIGHTS ══ -->
+    <h2 class="corporate">🏢 CORPORATE HIGHLIGHTS</h2>
+
+    <div class="section corporate">
+        <div class="content">
+            บริษัทจดทะเบียนทั่วโลกกำลังปรับตัวในอัตราเร่งเพื่อรับมือกับการดิสรัปต์และต้นทุนการระดมทุนที่สูงขึ้น:
+        </div>
+        <table class="data-table" style="margin-top:14px;">
+            <thead>
+                <tr>
+                    <th>อุตสาหกรรม</th>
+                    <th>บริษัทสำคัญ</th>
+                    <th>เหตุการณ์และผลกระทบเชิงกลยุทธ์</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="badge badge-pos">Technology &amp; AI</span></td>
+                    <td>Alphabet, Nvidia, Anthropic, IBM, Meta, AMD</td>
+                    <td>Alphabet ระดมทุน <strong>3.2 หมื่นล้านดอลลาร์</strong> (รวม Bond 100 ปี) เพื่อสงคราม AI ขณะที่ Meta และ AMD จับมือเพื่อลดการพึ่งพา Nvidia ในการผลิตชิป</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-mixed">Financials</span></td>
+                    <td>Charles Schwab, BofA, Palo Alto Networks</td>
+                    <td>Palo Alto Networks ร่วง <strong>-8%</strong> หลังหั่นเป้ากำไร ขณะที่ BofA รุกตลาด Private Credit ด้วยงบ <strong>2.5 หมื่นล้านดอลลาร์</strong></td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-neu">Consumer &amp; Retail</span></td>
+                    <td>Coca-Cola, Walmart, McDonald's</td>
+                    <td>Walmart ประสบความสำเร็จสูงใน E-commerce (โต <strong>27%</strong>) ด้วยการผสาน AI เข้ากับหน้าร้าน ขณะที่ Coca-Cola เผชิญยอดขายต่ำคาดจากกำลังซื้อชะลอตัว</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-pos">Industrial &amp; Luxury</span></td>
+                    <td>Siemens, Hermes, Kering, Airbus</td>
+                    <td>Siemens ทำ New High จากอุปสงค์ AI ในอุตสาหกรรม ส่วนกลุ่ม Luxury ยุโรปฟื้นตัวแข็งแกร่งท่ามกลางความผันผวนของตลาดสหรัฐฯ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ══ ECONOMIC INDICATORS ══ -->
+    <h2 class="indicators">📊 ECONOMIC INDICATORS</h2>
+
+    <div class="section indicators">
+        <h3>🇺🇸 สหรัฐอเมริกา (United States)</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>วันที่</th>
+                    <th>ตัวชี้วัด</th>
+                    <th>ผลที่ประกาศ</th>
+                    <th>Sentiment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11 ก.พ.</td>
+                    <td>ยอดค้าปลีก (Retail Sales) ธ.ค. 2025</td>
+                    <td>0.0% MoM; Control Group -0.1%</td>
+                    <td><span class="badge badge-neg">Negative</span></td>
+                </tr>
+                <tr>
+                    <td>12 ก.พ.</td>
+                    <td>Nonfarm Payrolls ม.ค. 2026</td>
+                    <td><strong>+130,000</strong> (สูงกว่าคาด 2 เท่า)</td>
+                    <td><span class="badge badge-pos">Positive</span></td>
+                </tr>
+                <tr>
+                    <td>16 ก.พ.</td>
+                    <td>CPI ม.ค. 2026</td>
+                    <td>2.4% YoY; Core 2.5% YoY</td>
+                    <td><span class="badge badge-neu">Neutral</span></td>
+                </tr>
+                <tr>
+                    <td>18 ก.พ.</td>
+                    <td>ADP Employment ม.ค. 2026</td>
+                    <td>+22,000 (ต่ำกว่าคาด)</td>
+                    <td><span class="badge badge-neg">Negative</span></td>
+                </tr>
+                <tr>
+                    <td>19 ก.พ.</td>
+                    <td>Housing Starts</td>
+                    <td>+6.2% MoM → 1.404 ล้านยูนิต</td>
+                    <td><span class="badge badge-pos">Positive</span></td>
+                </tr>
+                <tr>
+                    <td>19 ก.พ.</td>
+                    <td>Durable Goods</td>
+                    <td>-1.4% MoM</td>
+                    <td><span class="badge badge-neg">Negative</span></td>
+                </tr>
+                <tr>
+                    <td>23 ก.พ.</td>
+                    <td>GDP Q4/2025</td>
+                    <td>1.4% QoQ saar (ต่ำสุดนับตั้งแต่ Q1/2025)</td>
+                    <td><span class="badge badge-neg">Negative</span></td>
+                </tr>
+                <tr>
+                    <td>23 ก.พ.</td>
+                    <td>PCE เดือน ธ.ค. 2025 / Core PCE</td>
+                    <td>2.9% YoY / <strong>3.0%</strong> YoY</td>
+                    <td><span class="badge badge-neg">Negative</span></td>
+                </tr>
+                <tr>
+                    <td>23 ก.พ.</td>
+                    <td>Composite PMI ก.พ. 2026</td>
+                    <td>52.3 (ต่ำสุดในรอบ 10 เดือน)</td>
+                    <td><span class="badge badge-mixed">Mixed</span></td>
+                </tr>
+                <tr>
+                    <td>25 ก.พ.</td>
+                    <td>CB Consumer Confidence</td>
+                    <td>91.2 (ดีกว่าคาด)</td>
+                    <td><span class="badge badge-pos">Positive</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top:20px;">🇨🇳 จีน / 🇯🇵 ญี่ปุ่น / 🇬🇧 ยุโรป &amp; สหราชอาณาจักร</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ประเทศ</th>
+                    <th>วันที่ &amp; ตัวชี้วัด</th>
+                    <th>ผลที่ประกาศ</th>
+                    <th>Sentiment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🇨🇳 จีน</td>
+                    <td>11 ก.พ. — CPI &amp; PPI ม.ค. 2026</td>
+                    <td>CPI +0.2% YoY; PPI -1.4% YoY (ภาวะเงินฝืด)</td>
+                    <td><span class="badge badge-neg">Negative</span></td>
+                </tr>
+                <tr>
+                    <td>🇯🇵 ญี่ปุ่น</td>
+                    <td>16 ก.พ. — GDP Q4/2025</td>
+                    <td>+0.1% QoQ (พลิกกลับมาขยายตัวเล็กน้อย)</td>
+                    <td><span class="badge badge-neu">Neutral</span></td>
+                </tr>
+                <tr>
+                    <td>🇯🇵 ญี่ปุ่น</td>
+                    <td>20 ก.พ. — CPI ม.ค. 2026</td>
+                    <td>1.5% (ต่ำสุดนับตั้งแต่ มี.ค. 2022); Core 2.0%</td>
+                    <td><span class="badge badge-neu">Neutral</span></td>
+                </tr>
+                <tr>
+                    <td>🇯🇵 ญี่ปุ่น</td>
+                    <td>20 ก.พ. — Composite PMI ก.พ. 2026</td>
+                    <td><strong>53.8</strong> (สูงสุดนับตั้งแต่ พ.ค. 2023)</td>
+                    <td><span class="badge badge-pos">Positive</span></td>
+                </tr>
+                <tr>
+                    <td>🇬🇧 UK</td>
+                    <td>13 ก.พ. — GDP Q4/2025</td>
+                    <td>+0.1% QoQ (ต่ำกว่าคาด)</td>
+                    <td><span class="badge badge-neg">Negative</span></td>
+                </tr>
+                <tr>
+                    <td>🇬🇧 UK</td>
+                    <td>19 ก.พ. — CPI ม.ค. 2026</td>
+                    <td>3.0%; Services CPI <strong>4.4%</strong> (ยังหนืด)</td>
+                    <td><span class="badge badge-mixed">Mixed</span></td>
+                </tr>
+                <tr>
+                    <td>🇬🇧 UK</td>
+                    <td>23 ก.พ. — ยอดค้าปลีก ม.ค. 2026</td>
+                    <td>+1.8% MoM (สูงสุดนับตั้งแต่ พ.ค. 2024)</td>
+                    <td><span class="badge badge-pos">Positive</span></td>
+                </tr>
+                <tr>
+                    <td>🇩🇪 เยอรมนี</td>
+                    <td>23 ก.พ. — Manufacturing PMI ก.พ.</td>
+                    <td><strong>50.7</strong> (ขยายตัวครั้งแรกนับตั้งแต่ มิ.ย. 2022)</td>
+                    <td><span class="badge badge-pos">Positive</span></td>
+                </tr>
+                <tr>
+                    <td>🇩🇪 เยอรมนี</td>
+                    <td>24 ก.พ. — Ifo Business Climate ก.พ.</td>
+                    <td><strong>88.6</strong> (สูงสุดตั้งแต่ ส.ค. 2025)</td>
+                    <td><span class="badge badge-pos">Positive</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ══ POLITICAL ISSUES ══ -->
+    <h2 class="political">⚠️ POLITICAL ISSUES</h2>
+
+    <div class="section political">
+        <h3>🇺🇸 US Trade &amp; Tariffs</h3>
+        <ul class="bullet-list">
+            <li><strong>(12 ก.พ.)</strong> Donald Trump พิจารณาถอนสหรัฐฯ ออกจากข้อตกลงการค้า USMCA สร้างแรงกดดันต่อค่าเงินเม็กซิโกและแคนาดา</li>
+            <li><strong>(20 ก.พ.)</strong> สหรัฐฯ และอินโดนีเซียบรรลุข้อตกลงการค้าเพื่อลดภาษีนำเข้า โดยยอมรับเงื่อนไข <strong>Poison Pill</strong> ที่อนุญาตให้สหรัฐฯ ยกเลิกข้อตกลงได้หากอินโดนีเซียทำขัดต่อผลประโยชน์สหรัฐฯ</li>
+            <li><strong>(23 ก.พ.)</strong> ศาลฎีกาสหรัฐฯ มีมติยกเลิกมาตรการภาษีศุลกากรแบบต่างตอบแทน (Reciprocal Tariffs) ของ Trump</li>
+            <li><strong>(23 ก.พ.)</strong> Trump ตอบโต้ด้วยการเตรียมบังคับใช้มาตรการภาษี <strong>15% ทั่วโลก</strong> ผ่านการใช้อำนาจตามมาตรา 122 แทน</li>
+            <li><strong>(24 ก.พ.)</strong> สหภาพยุโรปประกาศระงับกระบวนการให้สัตยาบันข้อตกลงทางการค้ากับสหรัฐฯ ขณะที่อินเดียเลื่อนการเจรจาออกไปจากความไม่แน่นอนของนโยบาย</li>
+        </ul>
+
+        <h3>🕌 Middle East Geopolitics</h3>
+        <ul class="bullet-list">
+            <li><strong>(17 ก.พ.)</strong> อิหร่านซ้อมรบทางเรือใกล้ช่องแคบฮอร์มุซก่อนเริ่มการเจรจากับสหรัฐฯ</li>
+            <li><strong>(18 ก.พ.)</strong> สหรัฐฯ และอิหร่านบรรลุข้อตกลงเบื้องต้นด้านนิวเคลียร์ แต่สหรัฐฯ ยังคงเสริมกำลังทหารในภูมิภาค</li>
+            <li><strong>(19–20 ก.พ.)</strong> มีรายงานสหรัฐฯ พิจารณาการโจมตีอิหร่านแบบจำกัดขอบเขตเพื่อกดดันให้กลับสู่โต๊ะเจรจา</li>
+            <li><strong>(23 ก.พ.)</strong> Trump ขีดเส้นตาย <strong>15 วัน</strong> ให้อิหร่านบรรลุข้อตกลงนิวเคลียร์</li>
+            <li><strong>(24–25 ก.พ.)</strong> สหรัฐฯ และอิหร่านเตรียมเจรจานิวเคลียร์รอบที่ 3 โดย Trump ส่งสัญญาณให้ความสำคัญสูง</li>
+        </ul>
+
+        <h3>🇪🇺 European Politics</h3>
+        <ul class="bullet-list">
+            <li><strong>(11 ก.พ.)</strong> สถานะนายกรัฐมนตรี UK Keir Starmer มั่นคงขึ้นชั่วคราว ลดความกดดันในตลาดพันธบัตร</li>
+            <li><strong>(17 ก.พ.)</strong> สหราชอาณาจักรเร่งกระชับความสัมพันธ์กับ Single Market ของ EU เพื่อกระตุ้นเศรษฐกิจ</li>
+            <li><strong>(19 ก.พ.)</strong> กระแสข่าวลือหนาหูว่า Christine Lagarde อาจลาออกจากตำแหน่งประธาน ECB ก่อนครบวาระปี 2027</li>
+            <li><strong>(25 ก.พ.)</strong> ความเสี่ยงการเมืองฝรั่งเศสลดลง หลังศาลรัฐธรรมนูญผ่านร่างงบประมาณ ทำให้ประธานาธิบดี Macron เตรียมลงนามบังคับใช้กฎหมายได้</li>
+            <li><strong>(25 ก.พ.)</strong> ฮังการีเตรียมการเลือกตั้งทั่วไป เม.ย. โดยพรรคฝ่ายค้านมีคะแนนโพลนำ ซึ่งตลาดหวังว่าจะช่วยปลดล็อกเงินทุนจาก EU</li>
+        </ul>
+
+        <h3>🌏 Asia &amp; Latin America</h3>
+        <ul class="bullet-list">
+            <li><strong>(13 ก.พ.)</strong> วุฒิสภาอาร์เจนตินาผ่านร่างกฎหมายแรงงานฉบับใหม่เพื่อลดต้นทุนนายจ้างและดึงดูดการลงทุนต่างชาติ</li>
+            <li><strong>(17 ก.พ.)</strong> ชิลีเตรียมเปลี่ยนผ่านขั้วอำนาจการเมืองสู่ฝ่ายขวา นักลงทุนขานรับนโยบายลดภาษีและกฎระเบียบ</li>
+            <li><strong>(18 ก.พ.)</strong> กระทรวงต่างประเทศฟิลิปปินส์ประณามสถานทูตจีนที่เตือนว่าชาวฟิลิปปินส์อาจตกงานนับล้านคนว่าเป็น "พฤติกรรมข่มขู่"</li>
+            <li><strong>(23 ก.พ.)</strong> สภาผู้แทนราษฎรฟิลิปปินส์เริ่มต้นกระบวนการถอดถอนรองประธานาธิบดี Sara Duterte</li>
+            <li><strong>(25 ก.พ.)</strong> จีนยกระดับความตึงเครียดทางภูมิรัฐศาสตร์ โดยเพิ่มรายชื่อบริษัทญี่ปุ่นบางแห่งเข้าสู่บัญชีควบคุมการส่งออก</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Global Market Summary | 10–25 กุมภาพันธ์ 2026 | BLS Template</p>
+    </div>
+
+</div>
+
+    <script>
+        function generatePDF() {
+            const btn = document.querySelector('.btn-pdf');
+            btn.textContent = 'กำลังสร้าง PDF...';
+            btn.disabled = true;
+            setTimeout(() => {
+                window.print();
+                btn.innerHTML = `<svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg> Export PDF`;
+                btn.disabled = false;
+            }, 100);
         }
-      });
-
-      // View Switching
-      sections.forEach(section => {
-        if (section.id === `view-${targetId}`) {
-          section.classList.remove('hidden');
-        } else {
-          section.classList.add('hidden');
-        }
-      });
-
-      // Scroll to top
-      document.getElementById('main-content').scrollTop = 0;
-
-      // Mobile Menu Close
-      if (window.innerWidth < 768) {
-        document.getElementById('sidebar').classList.add('-translate-x-full');
-        document.getElementById('sidebar-overlay').classList.add('hidden');
-      }
-    }
-
-    // Mobile Menu Toggle
-    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.toggle('-translate-x-full');
-      document.getElementById('sidebar-overlay').classList.toggle('hidden');
-    });
-
-    document.getElementById('sidebar-overlay').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.add('-translate-x-full');
-      document.getElementById('sidebar-overlay').classList.add('hidden');
-    });
-  </script>
+    </script>
 </body>
 </html>
